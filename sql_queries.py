@@ -4,7 +4,7 @@ songplay_table_drop = "DROP TABLE IF EXISTS songplays"
 user_table_drop = "DROP TABLE IF EXISTS  users"
 song_table_drop = "DROP TABLE IF EXISTS  songs"
 artist_table_drop = "DROP TABLE IF EXISTS  artists"
-time_table_drop = "DROP TABLE IF EXISTS  timestamps"
+time_table_drop = "DROP TABLE IF EXISTS  time"
 
 # CREATE TABLES
 
@@ -25,9 +25,9 @@ artist_table_create = ("""CREATE TABLE IF NOT EXISTS artists (artist_id int,
 name varchar, location varchar, latitude int, longitude int);
 """)
 
-time_table_create = ("""CREATE TABLE IF NOT EXISTS timestamps (start_time int,
-hour int, day int, week int, month int, year int, weekday varchar);
-""")
+time_table_create = ("""CREATE TABLE IF NOT EXISTS time (start_time timestamp,
+hour date, day date, week date, month date, year date, weekday boolean);
+""") # Select better column types!!!!
 
 # INSERT RECORDS
 
@@ -52,7 +52,7 @@ longitude) \
 """)
 
 
-time_table_insert = ("""INSERT INTO timestamps (start_time, hour, day, week, month,
+time_table_insert = ("""INSERT INTO time (start_time, hour, day, week, month,
 year, weekday) \
                  VALUES (%s, %s, %s, %s, %s, %s, %s);
 """)

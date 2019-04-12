@@ -63,7 +63,7 @@ Not able to run create_tables.py - error says "table songplays does not exist"
 
 TODO for tomorrow...  
 
-1. Resolve issue around creating blank tables with create_tables.py  
+1. Resolve issue around creating blank tables with create_tables.py  *DONE!*
 2. Test ETL script, must be able to bring in data and transform with SQL queries - revise python/SQL as needed
 3. Set up the infrastructure so next week I can focus on the actual modeling!  
 
@@ -73,5 +73,24 @@ TODO for tomorrow...
 Fixed sql_queries.py by adding IF EXISTS to DROP statement  
 
 Dealt with git issues :)  
+
+Successfully checked all tables in test.ipynb BUT the 'time' table is not working. Will check by altering sql_queries.py  
+
+Sucessfully opened and closed connection to sparkifydb with test.ipynb. Used "SELECT * FROM pg_stat_activity;" to  check connection status in psql  *kept this open in seperate terminal window*  
+
+**Today I have completed the first part of the project;**
+Create Tables  
+Write CREATE statements in sql_queries.py to create each table.  
+Write DROP statements in sql_queries.py to drop each table if it exists.  
+Run create_tables.py to create your database and tables.  
+Run test.ipynb to confirm the creation of your tables with the correct columns. Make sure to click "Restart kernel" to close the connection to the database after running this notebook.  
+
+
+TODO for Monday...
+
+1. Figure out correct column types for each variable in each table and alter SQL queries accordingly.   
+
+
+
 
 
