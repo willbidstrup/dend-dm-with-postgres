@@ -90,7 +90,17 @@ TODO for Monday...
 
 1. Figure out correct column types for each variable in each table and alter SQL queries accordingly.   
 
+2019-04-15  
 
+Today I need to;  
+
+- get ETL jupyter notebook working  
+- get etl.py working  
+
+Tomorrow I need to;  
+
+- adjust everything including naming of Primary keys etc to create the actual schema  
+- complete documentation  
 
 
 
