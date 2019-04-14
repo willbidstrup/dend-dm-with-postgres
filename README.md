@@ -94,13 +94,21 @@ TODO for Monday...
 
 Today I need to;  
 
-- get ETL jupyter notebook working  
+- get ETL jupyter notebook working  *DONE with minimal example #1*  
+
+
+
+
 - get etl.py working  
+
+
 
 Tomorrow I need to;  
 
 - adjust everything including naming of Primary keys etc to create the actual schema  
-- complete documentation  
+- complete documentation  and submit  
+
+
 
 
 

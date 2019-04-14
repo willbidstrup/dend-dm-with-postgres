@@ -17,8 +17,8 @@ user_table_create = ("""CREATE TABLE IF NOT EXISTS users (user_id int,
 first_name varchar, last_name varchar, gender varchar, level varchar);
 """)
 
-song_table_create = ("""CREATE TABLE IF NOT EXISTS songs (song_id int,
-title varchar, artist_id int, year int, duration int);
+song_table_create = ("""CREATE TABLE IF NOT EXISTS songs (song_id varchar,
+title varchar, artist_id varchar, year int, duration int);
 """)
 
 artist_table_create = ("""CREATE TABLE IF NOT EXISTS artists (artist_id int,
@@ -41,7 +41,7 @@ gender, level) \
                  VALUES (%s, %s, %s, %s, %s);
 """)
 
-song_table_insert = ("""INSERT INTO songs (song_id, title, artist,
+song_table_insert = ("""INSERT INTO songs (song_id, title, artist_id,
 year, duration) \
                  VALUES (%s, %s, %s, %s, %s);
 """)
