@@ -13,7 +13,7 @@ start_time int, user_id int, level varchar, song_id int, artist_id int,
 session_id int, location varchar, user_agent varchar);
 """)
 
-user_table_create = ("""CREATE TABLE IF NOT EXISTS users (user_id int,
+user_table_create = ("""CREATE TABLE IF NOT EXISTS users (user_id varchar,
 first_name varchar, last_name varchar, gender varchar, level varchar);
 """)
 
