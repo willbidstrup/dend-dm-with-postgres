@@ -21,8 +21,8 @@ song_table_create = ("""CREATE TABLE IF NOT EXISTS songs (song_id varchar,
 title varchar, artist_id varchar, year int, duration int);
 """)
 
-artist_table_create = ("""CREATE TABLE IF NOT EXISTS artists (artist_id int,
-name varchar, location varchar, latitude int, longitude int);
+artist_table_create = ("""CREATE TABLE IF NOT EXISTS artists (artist_id varchar,
+artist_name varchar, artist_location varchar, artist_latitude varchar, artist_longitude varchar);
 """)
 
 time_table_create = ("""CREATE TABLE IF NOT EXISTS time (start_time timestamp,
@@ -46,8 +46,8 @@ year, duration) \
                  VALUES (%s, %s, %s, %s, %s);
 """)
 
-artist_table_insert = ("""INSERT INTO songs (artist_id, name, location, latitude,
-longitude) \
+artist_table_insert = ("""INSERT INTO artists (artist_id, artist_name, artist_location, artist_latitude,
+artist_longitude) \
                  VALUES (%s, %s, %s, %s, %s);
 """)
 

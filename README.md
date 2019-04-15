@@ -94,10 +94,9 @@ TODO for Monday...
 
 Today I need to;  
 
-- get ETL jupyter notebook working  *DONE with minimal example #1*  
+- get ETL jupyter notebook working  *DONE with minimal example #1 and # 2*  
 
-
-
+Check this https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c 
 
 - get etl.py working  
 
