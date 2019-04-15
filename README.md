@@ -42,7 +42,7 @@ From the project description itself, these are the steps to be followed;
 2019-04-10  
 I created a studentdb with user = student and password = student on my local machine.  This improved the error I was getting when running create_tables - previously I was getting a connection error, now I am getting "psycopg2.ProgrammingError: can't execute an empty query"  
 
-To run Postgres on my local machine I need to firstly cd to ~ and then run sudo -u postrges psql postgres. This gets me to the psql interface and from there I can follow along with tutorials such as https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb   
+To run Postgres on my local machine I need to firstly cd to ~ and then run sudo -u postgres psql postgres. This gets me to the psql interface and from there I can follow along with tutorials such as https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb   
 
 Questions at the end of this day;  
 
@@ -109,5 +109,9 @@ Tomorrow I need to;
 
 
 
+2019-04-16  
 
+The project is due today and I will struggle to complete.  
+
+Taking juch longer to do the ETL than I thought.  
 

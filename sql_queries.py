@@ -25,8 +25,8 @@ artist_table_create = ("""CREATE TABLE IF NOT EXISTS artists (artist_id varchar,
 artist_name varchar, artist_location varchar, artist_latitude varchar, artist_longitude varchar);
 """)
 
-time_table_create = ("""CREATE TABLE IF NOT EXISTS time (start_time timestamp,
-hour date, day date, week date, month date, year date, weekday boolean);
+time_table_create = ("""CREATE TABLE IF NOT EXISTS time (start_time time,
+hour int, day int, week int, month int, year int, weekday int);
 """) # Select better column types!!!!
 
 # INSERT RECORDS
