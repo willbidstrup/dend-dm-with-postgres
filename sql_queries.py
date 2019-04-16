@@ -59,7 +59,10 @@ year, weekday) \
 
 # FIND SONGS
 
-song_select = ("""
+song_select = ("""SELECT s.song_id, a.artist_id FROM songs as s
+LEFT JOIN artists as a
+ON a.artist_id = s.artist_id
+WHERE s.title = (%s) AND a.artist_name = (%s) AND s.duration=(%s)
 """)
 
 # QUERY LISTS

@@ -115,3 +115,4 @@ The project is due today and I will struggle to complete.
 
 Taking juch longer to do the ETL than I thought.  
 
+This works to disconnect sparkifydb in case of notebook hanging ...  select pg_terminate_backend(pid) from pg_stat_activity where datname='sparkifydb' 
