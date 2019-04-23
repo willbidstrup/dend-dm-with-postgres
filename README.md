@@ -115,4 +115,20 @@ The project is due today and I will struggle to complete.
 
 Taking juch longer to do the ETL than I thought.  
 
-This works to disconnect sparkifydb in case of notebook hanging ...  select pg_terminate_backend(pid) from pg_stat_activity where datname='sparkifydb' 
+This works to disconnect sparkifydb in case of notebook hanging ...  select pg_terminate_backend(pid) from pg_stat_activity where datname='sparkifydb'
+
+
+
+2019-04-23
+
+Today I am back in the game. I've set up the project on my work computer so I can study remotely and also set up a new branch (workdev) so I don't screw anything up that already works!
+
+To set up my work computer I needed to;
+
+- install postgres with homebrew then create student user and studentdb database
+- install pycorpg2 and ipython-sql via anaconda
+- git clone my repo and start a new branch
+- download the data from project session by opening terminal and zip -r data.zip data
+
+** Now I can work on my remote computer!!**
+
