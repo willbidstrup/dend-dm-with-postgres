@@ -8,8 +8,8 @@ time_table_drop = "DROP TABLE IF EXISTS  time"
 
 # CREATE TABLES
 
-songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays (songplay_id int,
-start_time int, user_id int, level varchar, song_id int, artist_id int,
+songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays (songplay_id SERIAL,
+start_time bigint, user_id int, level varchar, song_id varchar, artist_id varchar,
 session_id int, location varchar, user_agent varchar);
 """)
 
@@ -31,9 +31,9 @@ hour int, day int, week int, month int, year int, weekday int);
 
 # INSERT RECORDS
 
-songplay_table_insert = ("""INSERT INTO songplays (songplay_id, start_time,
-user_id, level, song_id, artist_id) \
-                 VALUES (%s, %s, %s, %s, %s, %s);
+songplay_table_insert = ("""INSERT INTO songplays (start_time,
+user_id, level, song_id, artist_id, session_id, location, user_agent) \
+                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s);
 """)
 
 user_table_insert = ("""INSERT INTO users (user_id, first_name, last_name,
