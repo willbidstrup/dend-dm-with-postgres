@@ -8,26 +8,26 @@ time_table_drop = "DROP TABLE IF EXISTS  time"
 
 # CREATE TABLES
 
+user_table_create = ("""CREATE TABLE IF NOT EXISTS users (user_id int PRIMARY KEY,
+first_name varchar, last_name varchar, gender varchar, level varchar);
+""")
+
+song_table_create = ("""CREATE TABLE IF NOT EXISTS songs (song_id varchar PRIMARY KEY,
+title varchar, artist_id varchar NOT NULL, year int, duration int);
+""")
+
+artist_table_create = ("""CREATE TABLE IF NOT EXISTS artists (artist_id varchar PRIMARY KEY,
+artist_name varchar, artist_location varchar, artist_latitude varchar, artist_longitude varchar);
+""")
+
+time_table_create = ("""CREATE TABLE IF NOT EXISTS time (start_time time PRIMARY KEY,
+hour int, day int, week int, month int, year int, weekday int);
+""")
+
 songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays (songplay_id SERIAL,
 start_time bigint, user_id int, level varchar, song_id varchar NOT NULL, artist_id varchar NOT NULL,
 session_id int, location varchar, user_agent varchar);
 """)
-
-user_table_create = ("""CREATE TABLE IF NOT EXISTS users (user_id varchar,
-first_name varchar, last_name varchar, gender varchar, level varchar);
-""")
-
-song_table_create = ("""CREATE TABLE IF NOT EXISTS songs (song_id varchar NOT NULL,
-title varchar, artist_id varchar NOT NULL, year int, duration int);
-""")
-
-artist_table_create = ("""CREATE TABLE IF NOT EXISTS artists (artist_id varchar,
-artist_name varchar, artist_location varchar, artist_latitude varchar, artist_longitude varchar);
-""")
-
-time_table_create = ("""CREATE TABLE IF NOT EXISTS time (start_time time,
-hour int, day int, week int, month int, year int, weekday int);
-""") # Select better column types!!!!
 
 # INSERT RECORDS
 

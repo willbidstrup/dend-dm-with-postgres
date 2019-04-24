@@ -138,7 +138,7 @@ Today I am going to attempt to create the ETL script.
 
 First I am going to use exactly whta I have in the notebook and in doing so uncover any errors. I have a feeling there are some instances where I am not selecting only one row.
 
-I am gettingt this error;
+I am getting this error;
 
 30 files found in data/log_data
 Traceback (most recent call last):
@@ -151,6 +151,27 @@ func(cur, datafile)
 File "etl_dev.py", line 57, in process_log_file
 songplay_data = (row.ts,row.userId,row.level,song_id,artist_id,row.sessionId,row.location,row.userAgent)
 NameError: name 'song_id' is not defined
+
+
+**TODO**  Find out how to export/import ERD from my database
+
+
+I changed my sql queries to include primary keys and now i get this error;
+
+Traceback (most recent call last):
+File "etl_dev.py", line 91, in <module>
+main()
+File "etl_dev.py", line 84, in main
+process_data(cur, conn, filepath='data/song_data', func=process_song_file)
+File "etl_dev.py", line 75, in process_data
+func(cur, datafile)
+File "etl_dev.py", line 20, in process_song_file
+cur.execute(artist_table_insert, artist_data)
+psycopg2.IntegrityError: duplicate key value violates unique constraint "artists_pkey"
+DETAIL:  Key (artist_id)=(ARNTLGG11E2835DDB9) already exists.
+
+
+
 
 
 
