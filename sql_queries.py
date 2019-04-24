@@ -25,7 +25,7 @@ hour int, day int, week int, month int, year int, weekday int);
 """)
 
 songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays (songplay_id SERIAL,
-start_time bigint, user_id int, level varchar, song_id varchar NOT NULL, artist_id varchar NOT NULL,
+start_time bigint NOT NULL, user_id int NOT NULL, level varchar, song_id varchar, artist_id varchar,
 session_id int, location varchar, user_agent varchar);
 """)
 
