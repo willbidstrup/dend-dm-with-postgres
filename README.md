@@ -132,3 +132,26 @@ To set up my work computer I needed to;
 
 ** Now I can work on my remote computer!!**
 
+2019-04-24
+
+Today I am going to attempt to create the ETL script.
+
+First I am going to use exactly whta I have in the notebook and in doing so uncover any errors. I have a feeling there are some instances where I am not selecting only one row.
+
+I am gettingt this error;
+
+30 files found in data/log_data
+Traceback (most recent call last):
+File "etl_dev.py", line 91, in <module>
+main()
+File "etl_dev.py", line 85, in main
+process_data(cur, conn, filepath='data/log_data', func=process_log_file)
+File "etl_dev.py", line 75, in process_data
+func(cur, datafile)
+File "etl_dev.py", line 57, in process_log_file
+songplay_data = (row.ts,row.userId,row.level,song_id,artist_id,row.sessionId,row.location,row.userAgent)
+NameError: name 'song_id' is not defined
+
+
+
+
