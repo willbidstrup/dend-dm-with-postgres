@@ -171,6 +171,13 @@ psycopg2.IntegrityError: duplicate key value violates unique constraint "artists
 DETAIL:  Key (artist_id)=(ARNTLGG11E2835DDB9) already exists.
 
 
+2019-04-25
+
+Today I am going to try and debug my SQL queries and use correct Primary and Foreign Key methods, as well as on onflict if needed.
+
+If I get time I will also finish my documentation.
+
+
 
 
 

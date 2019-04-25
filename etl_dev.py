@@ -54,7 +54,7 @@ def process_log_file(cur, filepath):
         songid, artistid = results if results else None, None
 
         # insert songplay record
-        songplay_data = (row.ts,row.userId,row.level,song_id,artist_id,row.sessionId,row.location,row.userAgent)
+        songplay_data = (row.ts,row.userId,row.level,songid,artistid,row.sessionId,row.location,row.userAgent)
         cur.execute(songplay_table_insert, songplay_data)
 
 
