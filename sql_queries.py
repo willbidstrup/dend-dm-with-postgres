@@ -7,10 +7,10 @@ artist_table_drop = "DROP TABLE IF EXISTS  artists"
 time_table_drop = "DROP TABLE IF EXISTS  time"
 
 # CREATE TABLES
-
+# songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
 songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays (songplay_id int,
-start_time int, user_id int, level varchar, song_id int, artist_id int,
-session_id int, location varchar, user_agent varchar);
+start_time int, user_id int, level varchar, song_id varchar, artist_id varchar,
+session_id varchar, location varchar, user_agent varchar);
 """)
 
 user_table_create = ("""CREATE TABLE IF NOT EXISTS users (user_id varchar,
@@ -30,10 +30,10 @@ hour int, day int, week int, month int, year int, weekday int);
 """) # Select better column types!!!!
 
 # INSERT RECORDS
-
+# songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
 songplay_table_insert = ("""INSERT INTO songplays (songplay_id, start_time,
-user_id, level, song_id, artist_id) \
-                 VALUES (%s, %s, %s, %s, %s, %s);
+user_id, level, song_id, artist_id, session_id, location, user_agent) \
+                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);
 """)
 
 user_table_insert = ("""INSERT INTO users (user_id, first_name, last_name,
