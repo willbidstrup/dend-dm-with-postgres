@@ -28,10 +28,10 @@ def process_log_file(cur, filepath):
     df = df[df['page'] == 'NextSong']
 
     # convert timestamp column to datetime
-    t = pd.to_datetime(df['ts'], unit='ms')
+    t = pd.to_datetime(df['ts'])
 
     # insert time data records
-    time_data =(t.dt.time, t.dt.hour, t.dt.day, t.dt.weekofyear, t.dt.month, t.dt.year, t.dt.weekday)
+    time_data =time_data = (t, t.dt.hour, t.dt.day, t.dt.weekofyear, t.dt.month, t.dt.year, t.dt.weekday)
     column_labels = ("start_time", "hour", "day", "week", "month", "year", "weekday")
     time_df = pd.DataFrame(dict(zip(column_labels, time_data)), columns = column_labels).reset_index(drop = True)
 

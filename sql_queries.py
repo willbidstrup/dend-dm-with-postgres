@@ -21,11 +21,11 @@ artist_name varchar, artist_location varchar, artist_latitude varchar, artist_lo
 """)
 
 time_table_create = ("""CREATE TABLE IF NOT EXISTS time (start_time time without time zone PRIMARY KEY,
-hour int, day int, week int, month int, year int, weekday int);
+hour int, day int, week int, month int, year int, weekday int );
 """)
 
 songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays (songplay_id SERIAL PRIMARY KEY,
-start_time time without time zone NOT NULL, user_id int NOT NULL, level varchar, song_id varchar, artist_id varchar,
+start_time time without time zone, user_id int NOT NULL, level varchar, song_id varchar, artist_id varchar,
 session_id int, location varchar, user_agent varchar,
 FOREIGN KEY (start_time) REFERENCES time(start_time),
 FOREIGN KEY (user_id) REFERENCES users(user_id),
@@ -54,8 +54,8 @@ artist_longitude) \
 """)
 
 
-time_table_insert = ("""INSERT INTO time (start_time, hour, day, week, month,
-year, weekday) \
+time_table_insert = ("""INSERT INTO time ((TIMESTAMP 'epoch' + start_time * INTERVAL '1 second'), (hour, day, week, month,
+year, weekday)) \
                  VALUES (%s, %s, %s, %s, %s, %s, %s)
                  ON CONFLICT (start_time) DO NOTHING;
 """)
