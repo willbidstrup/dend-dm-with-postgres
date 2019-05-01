@@ -21,7 +21,7 @@ artist_name varchar, artist_location varchar, artist_latitude varchar, artist_lo
 """)
 
 time_table_create = ("""CREATE TABLE IF NOT EXISTS time (start_time time without time zone PRIMARY KEY,
-hour int, day int, week int, month int, year int, weekday int );
+hour int NOT NULL, day int NOT NULL, week int NOT NULL, month int NOT NULL, year int NOT NULL, weekday int NOT NULL);
 """)
 
 songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays (songplay_id SERIAL PRIMARY KEY,
@@ -54,10 +54,11 @@ artist_longitude) \
 """)
 
 
-time_table_insert = ("""INSERT INTO time ((TIMESTAMP 'epoch' + start_time * INTERVAL '1 second'), (hour, day, week, month,
-year, weekday)) \
-                 VALUES (%s, %s, %s, %s, %s, %s, %s)
-                 ON CONFLICT (start_time) DO NOTHING;
+time_table_insert = ("""
+                INSERT INTO time (start_time, hour, day, week, month,
+                year, weekday) \
+                VALUES (TIMESTAMP 'epoch' + (%s * INTERVAL '1 second'), %s, %s, %s, %s, %s, %s)
+                ON CONFLICT (start_time) DO NOTHING;
 """)
 
 songplay_table_insert = ("""INSERT INTO songplays (start_time,
